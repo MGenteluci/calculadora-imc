@@ -1,7 +1,10 @@
 public enum GrauObesidade {
-    Magreza,
-    Normal,
+    BaixoPesoMuitoGrave,
+    BaixoPesoGrave,
+    BaixoPeso,
+    PesoNormal,
     Sobrepeso,
-    Obesidade,
-    ObesidadeGrave
+    ObesidadeGrauI,
+    ObesidadeGrauII,
+    ObesidadeGrauIII
 }

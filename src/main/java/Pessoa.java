@@ -14,10 +14,13 @@ public class Pessoa {
     public String calculaImc() {
         double imc =  this.peso / (this.altura * this.altura);
 
-        if (imc < 18.5) return GrauObesidade.Magreza.name();
-        if (imc <= 24.9) return GrauObesidade.Normal.name();
-        if (imc <= 29.9) return GrauObesidade.Sobrepeso.name();
-        if (imc <= 39.9) return GrauObesidade.Obesidade.name();
-        return GrauObesidade.ObesidadeGrave.name();
+        if (imc < 16) return GrauObesidade.BaixoPesoMuitoGrave.name();
+        if (imc <= 16.99) return GrauObesidade.BaixoPesoGrave.name();
+        if (imc <= 18.49) return GrauObesidade.BaixoPeso.name();
+        if (imc <= 24.99) return GrauObesidade.PesoNormal.name();
+        if (imc <= 29.99) return GrauObesidade.Sobrepeso.name();
+        if (imc <= 34.99) return GrauObesidade.ObesidadeGrauI.name();
+        if (imc <= 39.99) return GrauObesidade.ObesidadeGrauII.name();
+        return GrauObesidade.ObesidadeGrauIII.name();
     }
 }
