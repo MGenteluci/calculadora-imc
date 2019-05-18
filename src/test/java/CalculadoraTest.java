@@ -75,4 +75,25 @@ public class CalculadoraTest {
         Assertions.assertEquals("Sexo inválido", result);
     }
 
+    @Test
+    @DisplayName("Homem; 12 anos; 1.5 de altura; 40kg; Peso normal")
+    void test10() {
+        String result = calculadora.calcula("M", 12, 1.5, 40);
+        Assertions.assertEquals(GrauObesidade.PesoNormal.name(), result);
+    }
+
+    @Test
+    @DisplayName("Homem; 12 anos; 1.5 de altura; 50kg; Sobrepeso")
+    void test11() {
+        String result = calculadora.calcula("M", 12, 1.5, 50);
+        Assertions.assertEquals(GrauObesidade.Sobrepeso.name(), result);
+    }
+
+    @Test
+    @DisplayName("Homem; 12 anos; 1.5 de altura; 30kg; Baixo peso")
+    void test12() {
+        String result = calculadora.calcula("M", 12, 1.5, 30);
+        Assertions.assertEquals(GrauObesidade.BaixoPeso.name(), result);
+    }
+
 }
