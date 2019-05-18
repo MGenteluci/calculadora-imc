@@ -68,4 +68,11 @@ public class CalculadoraTest {
         Assertions.assertEquals(GrauObesidade.ObesidadeGrauIII.name(), result);
     }
 
+    @Test
+    @DisplayName("Sexo S; Sexo inválido")
+    void test9() {
+        String result = calculadora.calcula("S", 22, 1.8, 135);
+        Assertions.assertEquals("Sexo inválido", result);
+    }
+
 }
