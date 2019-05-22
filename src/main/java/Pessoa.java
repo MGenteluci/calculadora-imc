@@ -92,6 +92,76 @@ public class Pessoa {
         return GrauObesidade.ObesidadeGrauI.name();
     }
 
+    private String calculaImcMenina(double imc) {
+        if (this.idade <= 2) {
+            if (imc <= 15) return GrauObesidade.BaixoPeso.name();
+            if (imc <= 18) return GrauObesidade.PesoNormal.name();
+            if (imc <= 20) return GrauObesidade.Sobrepeso.name();
+            return GrauObesidade.ObesidadeGrauI.name();
+        }
+
+        if (this.idade <= 4) {
+            if (imc <= 14) return GrauObesidade.BaixoPeso.name();
+            if (imc <= 17) return GrauObesidade.PesoNormal.name();
+            if (imc <= 18) return GrauObesidade.Sobrepeso.name();
+            return GrauObesidade.ObesidadeGrauI.name();
+        }
+
+        if (this.idade <= 6) {
+            if (imc <= 14) return GrauObesidade.BaixoPeso.name();
+            if (imc <= 17) return GrauObesidade.PesoNormal.name();
+            if (imc <= 19) return GrauObesidade.Sobrepeso.name();
+            return GrauObesidade.ObesidadeGrauI.name();
+        }
+
+        if (this.idade <= 8) {
+            if (imc <= 14) return GrauObesidade.BaixoPeso.name();
+            if (imc <= 18) return GrauObesidade.PesoNormal.name();
+            if (imc <= 20.7) return GrauObesidade.Sobrepeso.name();
+            return GrauObesidade.ObesidadeGrauI.name();
+        }
+
+        if (this.idade <= 10) {
+            if (imc <= 14.5) return GrauObesidade.BaixoPeso.name();
+            if (imc <= 20) return GrauObesidade.PesoNormal.name();
+            if (imc <= 23) return GrauObesidade.Sobrepeso.name();
+            return GrauObesidade.ObesidadeGrauI.name();
+        }
+
+        if (this.idade <= 12) {
+            if (imc <= 15.5) return GrauObesidade.BaixoPeso.name();
+            if (imc <= 21.8) return GrauObesidade.PesoNormal.name();
+            if (imc <= 25) return GrauObesidade.Sobrepeso.name();
+            return GrauObesidade.ObesidadeGrauI.name();
+        }
+
+        if (this.idade <= 14) {
+            if (imc <= 16.3) return GrauObesidade.BaixoPeso.name();
+            if (imc <= 23.2) return GrauObesidade.PesoNormal.name();
+            if (imc <= 27) return GrauObesidade.Sobrepeso.name();
+            return GrauObesidade.ObesidadeGrauI.name();
+        }
+
+        if (this.idade <= 16) {
+            if (imc <= 17.2) return GrauObesidade.BaixoPeso.name();
+            if (imc <= 24.7) return GrauObesidade.PesoNormal.name();
+            if (imc <= 29) return GrauObesidade.Sobrepeso.name();
+            return GrauObesidade.ObesidadeGrauI.name();
+        }
+
+        if (this.idade <= 18) {
+            if (imc <= 18.2) return GrauObesidade.BaixoPeso.name();
+            if (imc <= 25.7) return GrauObesidade.PesoNormal.name();
+            if (imc <= 30.2) return GrauObesidade.Sobrepeso.name();
+            return GrauObesidade.ObesidadeGrauI.name();
+        }
+
+        if (imc <= 18.5) return GrauObesidade.BaixoPeso.name();
+        if (imc <= 26.5) return GrauObesidade.PesoNormal.name();
+        if (imc <= 32.7) return GrauObesidade.Sobrepeso.name();
+        return GrauObesidade.ObesidadeGrauI.name();
+    }
+
     private String calculaImcHomemIdoso(double imc) {
         if (imc < 21.99) return GrauObesidade.BaixoPeso.name();
         if (imc <= 27) return GrauObesidade.PesoNormal.name();
@@ -117,6 +187,7 @@ public class Pessoa {
     }
 
     private String calculaImcMulher(double imc) {
+        if (this.idade <= 20) return calculaImcMenina(imc);
         if (this.idade > 65) return this.calculaImcMulherIdosa(imc);
         return this.calculaImcPopulacaoBase(imc);
     }
